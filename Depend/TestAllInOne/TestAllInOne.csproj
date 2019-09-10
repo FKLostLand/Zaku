@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D19C738-C5C4-40D6-9484-84AA0E6E2D33}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestAllInOne</RootNamespace>
+    <AssemblyName>TestAllInOne</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Publish|AnyCPU'">
+    <OutputPath>..\..\Bin\Publish\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LogForm\Depend\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>LogForm\Depend\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HttpTest.cs" />
+    <Compile Include="HttpTest\FastGet.cs" />
+    <Compile Include="HttpTest\FastHead.cs" />
+    <Compile Include="HttpTest\NormalGet.cs" />
+    <Compile Include="HttpTest\NormalHead.cs" />
+    <Compile Include="HttpTest\SimpleTest.cs" />
+    <Compile Include="LogForm\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogForm\ICSharpCodeExtension\Actions\CaretActionsExtension.cs" />
+    <Compile Include="LogForm\Log\ILoggerView.cs" />
+    <Compile Include="LogForm\Log\ILogManager.cs" />
+    <Compile Include="LogForm\Log\ILogMessageNotifiable.cs" />
+    <Compile Include="LogForm\Log\LoggerItem.cs" />
+    <Compile Include="LogForm\Log\LogLevel.cs" />
+    <Compile Include="LogForm\Log\LogLevelInfo.cs" />
+    <Compile Include="LogForm\Log\LogLevels.cs" />
+    <Compile Include="LogForm\Log\LogManager.cs" />
+    <Compile Include="LogForm\Log\LogMessage.cs" />
+    <Compile Include="LogForm\Log\LogMessageField.cs" />
+    <Compile Include="LogForm\Log\LogMessageItem.cs" />
+    <Compile Include="LogForm\Log\LogUtils.cs" />
+    <Compile Include="LogForm\MainLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm\MainLogForm.Designer.cs">
+      <DependentUpon>MainLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogForm\Properties\Settings.Designer.cs" />
+    <Compile Include="LogForm\Receiver\BaseReceiver.cs" />
+    <Compile Include="LogForm\Receiver\CsvFileReceiver.cs" />
+    <Compile Include="LogForm\Receiver\DebugMonitor.cs" />
+    <Compile Include="LogForm\Receiver\EventLogReceiver.cs" />
+    <Compile Include="LogForm\Receiver\FileReceiver.cs" />
+    <Compile Include="LogForm\Receiver\IReceiver.cs" />
+    <Compile Include="LogForm\Receiver\MsmqReceiver.cs" />
+    <Compile Include="LogForm\Receiver\ReceiverFactory.cs" />
+    <Compile Include="LogForm\Receiver\ReceiverUtils.cs" />
+    <Compile Include="LogForm\Receiver\RemotingReceiver.cs" />
+    <Compile Include="LogForm\Receiver\SLPolicyServerReceiver.cs" />
+    <Compile Include="LogForm\Receiver\TcpReceiver.cs" />
+    <Compile Include="LogForm\Receiver\UdpReceiver.cs" />
+    <Compile Include="LogForm\Receiver\WinDebugReceiver.cs" />
+    <Compile Include="LogForm\Settings\FieldType.cs" />
+    <Compile Include="LogForm\Settings\LayoutSettings.cs" />
+    <Compile Include="LogForm\Settings\ReceiversForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm\Settings\ReceiversForm.Designer.cs">
+      <DependentUpon>ReceiversForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogForm\Settings\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm\Settings\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogForm\Settings\SourceFileLocation.cs" />
+    <Compile Include="LogForm\Settings\UserSettings.cs" />
+    <Compile Include="LogForm\UI\AutoWaitCursor.cs" />
+    <Compile Include="LogForm\UI\ControlExtenders\DockExtender.cs" />
+    <Compile Include="LogForm\UI\ControlExtenders\Floaty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm\UI\ControlExtenders\Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogForm\UI\FlickerFreeListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LogForm\UI\ToolStripControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LogForm\UI\TreeViewLoggerView.cs" />
+    <Compile Include="LogForm\UI\WindowRestorer.cs" />
+    <Compile Include="LogForm\Utils.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\CommonDllNames.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\Core.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\TabbedThumbnailNativeMethods.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\TaskbarManager.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\TaskbarNativeMethods.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\TaskbarProgressBarState.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\TaskbarWindow.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\TaskbarWindowManager.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\ThumbnailToolbarButton.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\ThumbnailToolbarManager.cs" />
+    <Compile Include="LogForm\Win32ApiCodePack\ThumbnailToolbarProxyWindow.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LogForm\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogForm\MainLogForm.resx">
+      <DependentUpon>MainLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogForm\Settings\ReceiversForm.resx">
+      <DependentUpon>ReceiversForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogForm\Settings\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="LogForm\Properties\Settings.settings" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HttpRequest\HttpRequest.csproj">
+      <Project>{B9617CB1-1661-405A-B02E-CB7A517C8CED}</Project>
+      <Name>HttpRequest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICSharpCode.TextEditor\ICSharpCode.TextEditor.csproj">
+      <Project>{2d18be89-d210-49eb-a9dd-2246fbb3df6d}</Project>
+      <Name>ICSharpCode.TextEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ListViewPrinter\ListViewPrinter2012.csproj">
+      <Project>{e73a10bd-2b5a-4bac-897f-3a58cfc07631}</Project>
+      <Name>ListViewPrinter2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaterialSkin\MaterialSkin.csproj">
+      <Project>{8eb7611b-68cd-4b8b-987a-11717e2b250c}</Project>
+      <Name>MaterialSkin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
+      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Name>ObjectListView2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RichTextBoxLinks\RichTextBoxLinks.csproj">
+      <Project>{8b833b00-bb4c-4faf-b6c4-bf77824f96a1}</Project>
+      <Name>RichTextBoxLinks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartThreadPool\SmartThreadPool.csproj">
+      <Project>{74D4C33F-7CC8-4B2A-A7DF-D8B6E63B6EBD}</Project>
+      <Name>SmartThreadPool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsageControl\UsageControl.csproj">
+      <Project>{c11a4561-ccb5-4c96-8df2-b804031d89d8}</Project>
+      <Name>UsageControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\back161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\backward161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\burn161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\cd161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\close161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\collapse_all1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\configure161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\delete161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\deletefile161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\documentsorcopy161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\find161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\forward161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\go161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\gotoapp161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\infoabout161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\movefile161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\next161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\pause161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\pin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\saveas161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\unselect1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\window161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\zoomin161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\zoomout161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LogForm\res\windowb.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

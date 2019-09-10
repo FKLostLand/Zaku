@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ThreadNum>4</ThreadNum>
+  <IntevalTime>50</IntevalTime>
+  <UAType>完全随机UA</UAType>
+  <IsAutoSaveResult>true</IsAutoSaveResult>
+  <IsSaveAsTxt>true</IsSaveAsTxt>
+  <IsSaveAsCsv>false</IsSaveAsCsv>
+  <IsSaveAsMySQL>false</IsSaveAsMySQL>
+</Config>
